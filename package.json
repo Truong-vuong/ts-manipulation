@@ -1,0 +1,24 @@
+{
+  "name": "manipulation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Truong-vuong/ts-manipulation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Truong-vuong/ts-manipulation/issues"
+  },
+  "homepage": "https://github.com/Truong-vuong/ts-manipulation#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

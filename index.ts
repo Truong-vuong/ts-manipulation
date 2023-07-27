@@ -55,7 +55,7 @@ myGenericNumber.add = function (x, y) {
 
 // Generic Constraints
 function loggingIdentity<Type>(arg: Type): Type {
-  console.log(arg.length);
+  // console.log(arg.length);
   return arg;
 }
 
@@ -85,7 +85,7 @@ const person: Customer = {
 };
 const names = getProperty(person, "name"); // Kiểu trả về: string
 const age = getProperty(person, "age"); // Kiểu trả về: number
-const invalidProperty = getProperty(person, "email"); 
+// const invalidProperty = getProperty(person, "email"); 
 // Lỗi: Argument of type '"email"' is not assignable to parameter of type 'keyof Customer'.
 
 // Ví dụ  Sử dụng keyof với Generic Types
@@ -221,21 +221,21 @@ const passedObject = {
 type PropEventSource<Type> = {
   on(eventName: `${string & keyof Type}Changed`, callback: (newValue: any) => void): void;
 };
-const person = makeWatchedObject({
-  firstName: "Saoirse",
-  lastName: "Ronan",
-  age: 26
-});
+// const person = makeWatchedObject({
+//   firstName: "Saoirse",
+//   lastName: "Ronan",
+//   age: 26
+// });
 
 
-person.on("firstNameChanged", (newValue) => {
-    console.log(`firstName was changed to ${newValue}!`);
-});
+// person.on("firstNameChanged", (newValue) => {
+//     console.log(`firstName was changed to ${newValue}!`);
+// });
 
 // TypeScript sẽ thông báo lỗi nếu chúng ta cố gắng gọi hàm on() với tên thuộc tính không đúng
-person.on("firstName", () => {});
+// person.on("firstName", () => {});
 // Lỗi: Argument of type '"firstName"' is not assignable to parameter of type '"firstNameChanged" | "lastNameChanged" | "ageChanged"'.
 
 // Hạn chế dễ dàng gõ sai tên sự kiện
-person.on("frstNameChanged", () => {});
+// person.on("frstNameChanged", () => {});
 // Lỗi: Argument of type '"frstNameChanged"' is not assignable to parameter of type '"firstNameChanged" | "lastNameChanged" | "ageChanged"'.
